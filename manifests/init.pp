@@ -5,4 +5,11 @@ class libxml {
 
   package { $required: ensure => latest }
 
+  file { '/usr/lib64/libxml2.so':
+    ensure => 'link',
+    owner  => 'root',
+    group  => 'root',
+    target => '/usr/lib64/libxml2.so.2',
+  }
+
 }
